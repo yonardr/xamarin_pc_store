@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pc_store.Views.AdminPages.AddProduct">
+    <ContentPage.Content>
+        <StackLayout Margin="50">
+            <StackLayout>
+                <Button Text="Назад" HorizontalOptions="Start" Clicked="Button_Clicked_1"/>
+            <Label Text="Добавление товара"
+                VerticalOptions="Start" 
+                HorizontalOptions="Center" FontSize="Large" />
+            </StackLayout>
+            <Label Text="Название" />
+            <Entry x:Name="name"/>
+
+            <Label Text="Цена" />
+            <Entry x:Name="price"/>
+
+            <Label Text="Тип" />
+            <Picker x:Name="picker_type" />
+
+            <Label Text="Описание" />
+            <Entry x:Name="description" />
+
+            <Label Text="Ссылка на картинку" />
+            <Entry x:Name="img"/>
+
+            <Button Text="Добавить" Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

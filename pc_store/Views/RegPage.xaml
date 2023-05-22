@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pc_store.Views.RegPage">
+    <ContentPage.Content>
+        <StackLayout Margin="50">
+            <Button Text = "Назад" FontSize="Large" BorderWidth="1"
+        HorizontalOptions="Start" 
+        Clicked="Button_Clicked_1"/>
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="300">
+                <Label x:Name="textLabel" FontSize="Large" Text="Регистрация"/>
+                <Entry x:Name="login"  Placeholder = "Логин"/>
+                <Entry x:Name="password"  Placeholder = "Пароль" IsPassword ="True" />
+
+                <Button Text = "Зарегистрироваться" FontSize="Medium" BorderWidth="1"
+        HorizontalOptions="Center" 
+        Clicked="Button_Clicked" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
