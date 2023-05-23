@@ -4,7 +4,7 @@
              x:Class="pc_store.Views.MainPage">
     <ContentPage.Content>
         <StackLayout Margin="50">
-            <Picker x:Name="picker_type" >
+            <Picker x:Name="picker_type" SelectedIndexChanged="picker_type_SelectedIndexChanged">
                 <Picker.Items>
                     
                 </Picker.Items>

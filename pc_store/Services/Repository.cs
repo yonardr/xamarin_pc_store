@@ -12,8 +12,7 @@ namespace pc_store.Services
         public Repository(string databasePath)
         {
             database = new SQLiteConnection(databasePath);
-            database.CreateTables<Users, Products, Types, ProdTypes>();
-            
+            database.CreateTables<Users, Products, Types>();
         }
         
     }

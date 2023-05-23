@@ -16,6 +16,7 @@ namespace pc_store.Models
             public string description { get; set; }
             public int type { get; set;}
             public string img { get; set; }
+            public int count { get; set; }
         }
     
 }
