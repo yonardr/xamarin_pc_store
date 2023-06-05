@@ -55,10 +55,12 @@ namespace pc_store.Views
         {
             //productsList.ItemsSource = null;
             var Prods = App.Database.GetProducts();
-            List<Products> arrProd = new List<Products>(); 
+            List<Products> arrProd = new List<Products>();
+            var type_name = picker_type.Items[picker_type.SelectedIndex];
+            var getType = App.Database.GetTypes().Where(i => i.Name == type_name).FirstOrDefault();
             foreach (var item in Prods)
             {
-                if (item.type == picker_type.SelectedIndex + 1) { 
+                if (item.type == getType.Id) { 
                 
                     arrProd.Add(item);
                 }

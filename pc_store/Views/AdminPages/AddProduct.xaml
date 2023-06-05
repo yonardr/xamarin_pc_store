@@ -22,10 +22,19 @@
             <Label Text="Описание" />
             <Entry x:Name="description" />
 
+            <Label Text="Кол-во товара" />
+            <Entry x:Name="quantity" />
+
             <Label Text="Ссылка на картинку" />
             <Entry x:Name="img"/>
 
             <Button Text="Добавить" Clicked="Button_Clicked"/>
+
+            <Label Text="Удаление товара"
+                HorizontalOptions="Center" FontSize="Large" />
+            <Label Text="Товар" />
+            <Picker x:Name="picker_prod" />
+            <Button Text="Удалить" Clicked="Button_Clicked_2"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

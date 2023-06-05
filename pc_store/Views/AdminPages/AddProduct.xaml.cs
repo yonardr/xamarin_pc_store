@@ -21,6 +21,10 @@ namespace pc_store.Views.AdminPages
             {
                 picker_type.Items.Add($"{type.Name}");
             }
+            foreach (var p in App.Database.GetProducts())
+            {
+                picker_prod.Items.Add($"{p.name}");
+            }
         }
 
         private void Button_Clicked(object sender, EventArgs e)
@@ -33,11 +37,12 @@ namespace pc_store.Views.AdminPages
 					var product = new Products()
 					{
 						name = name.Text,
-						price = price.Text,
+						price = Convert.ToInt32(price.Text),
 						description = description.Text,
 						img = img.Text,
 						type = type_id.Id,
-					};
+						quantity = Convert.ToInt32(quantity.Text),
+                    };
 					App.Database.SaveProduct (product);
                     DisplayAlert("Уведомление", "Успешно", "Ok");
                 }
@@ -50,6 +55,21 @@ namespace pc_store.Views.AdminPages
         private async void Button_Clicked_1(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new AdminPage());
+        }
+
+        private void Button_Clicked_2(object sender, EventArgs e)
+        {
+            try { 
+            var prod_name = picker_prod.Items[picker_prod.SelectedIndex];
+            var prod = App.Database.GetProducts().Where(i => i.name == prod_name).FirstOrDefault();
+            App.Database.DeleteProduct(prod.Id);
+            DisplayAlert("Удалено", "", "Ok");
+            }
+            catch(Exception ex)
+            {
+                DisplayAlert("Ошибка", $"{ex}", "Ok");
+            }
+
         }
     }
 }

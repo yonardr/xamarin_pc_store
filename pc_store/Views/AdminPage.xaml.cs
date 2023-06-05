@@ -32,5 +32,15 @@ namespace pc_store.Views
         {
             await Navigation.PushModalAsync(new AddType());
         }
+
+        private async void Button_Clicked_3(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new AddStockProd());
+        }
+
+        private async void Button_Clicked_4(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new EditProduct());
+        }
     }
 }

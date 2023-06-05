@@ -31,6 +31,7 @@ namespace pc_store.Views
                         if (item.Login == login.Text && item.Pass == password.Text)
                         {
                             Application.Current.MainPage = new AppShell();
+                            Jwt.id = item.Id;   
                             flag = false;
                         }
                     }

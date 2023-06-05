@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pc_store.Views.AdminPages.EditProductPage">
+    <ContentPage.Content>
+        <StackLayout Margin="50">
+            <Button Text="Назад" Clicked="Button_Clicked"/>
+            <Label Text="ID"/>
+            <Label x:Name="id" Text="{Binding Id}"/>
+
+            <Label Text="Название"/>
+            <Entry x:Name="name" Text="{Binding name}"/>
+            <Image Source="{Binding img}" WidthRequest="200"/>
+            <Entry x:Name="img" Text="{Binding img}"/>
+            
+            <Entry x:Name="type" Text="{Binding type}"/>
+            
+            <Label Text="Описание" FontSize="Large"/>
+            <Entry x:Name="description" Text="{Binding description}" />
+            <Label Text="Цена" FontSize="Medium"/>
+            <Entry x:Name="price" Text="{Binding price}" />
+
+            <Button x:Name="btn" Text="Изменить" Clicked="btn_Clicked"/>
+            <Button x:Name="btn_delete2" Text="Удалить" Clicked="btn_delete2_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
