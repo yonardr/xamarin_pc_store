@@ -16,14 +16,13 @@ namespace pc_store.Views
 		public CartPage ()
 		{
 			InitializeComponent ();
-            var a = App.Database.GetCartsUser(Jwt.id);
-			productsList.ItemsSource = a;
+            update();
         }
 
      
         private async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            Cart selected = (Cart)e.SelectedItem;
+            ViewCart selected = (ViewCart)e.SelectedItem;
 			string answer = await DisplayActionSheet("", "Cancel", null, "Удалить", "Указать кол-во");
 			if (answer == "Удалить")
 			{
@@ -47,10 +46,44 @@ namespace pc_store.Views
                             quantity = Convert.ToInt32(result)
                         };
                         App.Database.SaveCart(c, Jwt.id);
+                        update();
                     }
                     else await DisplayAlert("Такого кол-во товара нет в наличии", "", "ок");
                 }
             }
+        }
+
+        private void update()
+        {
+            var list = new List<ViewCart>(); 
+            var a = App.Database.GetCartsUser(Jwt.id);
+            foreach(var item in a)
+            {
+                if(item != null)
+                {
+                    var prod_name = App.Database.GetProduct(item.prod_id).name;
+                    var l = new ViewCart() {
+                        Id = item.Id,
+                        name = prod_name,
+                        price = item.price,
+                        quantity = item.quantity,
+                    };
+                    list.Add(l);
+                }
+            }
+            productsList.ItemsSource = list;
+
+            double price = 0;
+            foreach (var item in a)
+            {
+                if(item != null) price += item.price * item.quantity;
+            }
+            last_price.Text = "Итого: " + Convert.ToString(price); 
+        }
+        class ViewCart : Cart
+        {
+            public string name;
+
         }
     }
 }
