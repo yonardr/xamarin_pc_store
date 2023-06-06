@@ -32,7 +32,7 @@
     <TabBar>
         <!--<ShellContent Title="Главная" Icon="icon_about.png" Route="MainPage" ContentTemplate="{DataTemplate local:MainPage}"/>-->
         <ShellContent Title="Главная" ContentTemplate="{DataTemplate local:MainPage}"/>
-        <ShellContent Title="Конфигуратор" ContentTemplate="{DataTemplate local:CartPage}"/>
+        <ShellContent Title="Конфигуратор" ContentTemplate="{DataTemplate local:ConfPage}"/>
         <ShellContent Title="Корзина" ContentTemplate="{DataTemplate local:CartPage}"/>
         <ShellContent Title="Заказы" ContentTemplate="{DataTemplate local:OrdersPage}"/>
     </TabBar>

@@ -6,7 +6,6 @@
         <StackLayout Margin="50">
             <Picker x:Name="picker_type" SelectedIndexChanged="picker_type_SelectedIndexChanged">
                 <Picker.Items>
-                    
                 </Picker.Items>
             </Picker>
             

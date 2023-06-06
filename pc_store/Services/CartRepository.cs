@@ -37,7 +37,7 @@ namespace pc_store.Services
                 
                 foreach (var o in ff)
                 {
-                    if (item.id == o.cart_id) flag = false;
+                    if (item.cart_id == o.cart_id) flag = false;
                 }
                 if (flag)
                 {

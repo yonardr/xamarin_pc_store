@@ -21,12 +21,15 @@ namespace pc_store.Views
 
         protected override void OnAppearing()
         {
+            picker_type.Items.Clear();
             productsList.ItemsSource = App.Database.GetProducts();
+
+            picker_type.Items.Add($"Все");
             foreach (var type in App.Database.GetTypes())
             {
                 picker_type.Items.Add($"{type.Name}");
             }
-
+            picker_type.SelectedIndex = 0;
             base.OnAppearing();
         }
         // обработка нажатия элемента в списке
@@ -53,21 +56,28 @@ namespace pc_store.Views
 
         private void picker_type_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //productsList.ItemsSource = null;
             var Prods = App.Database.GetProducts();
             List<Products> arrProd = new List<Products>();
-            var type_name = picker_type.Items[picker_type.SelectedIndex];
-            var getType = App.Database.GetTypes().Where(i => i.Name == type_name).FirstOrDefault();
-            foreach (var item in Prods)
+            if (picker_type.SelectedIndex <= 0)
             {
-                if (item.type == getType.Id) { 
-                
-                    arrProd.Add(item);
-                }
-                
+                productsList.ItemsSource = App.Database.GetProducts();
             }
-            productsList.ItemsSource = arrProd;
+            else
+            {
+                var type_name = picker_type.Items[picker_type.SelectedIndex];
+                var getType = App.Database.GetTypes().Where(i => i.Name == type_name).FirstOrDefault();
+                foreach (var item in Prods)
+                {
+                    if (item.type == getType.Id)
+                    {
 
+                        arrProd.Add(item);
+                    }
+
+                }
+                productsList.ItemsSource = arrProd;
+            }
+            
         }
     }
 }
