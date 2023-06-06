@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="pc_store.Views.AdminPages.AddProduct">
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout Margin="50">
+           
             <StackLayout>
                 <Button Text="Назад" HorizontalOptions="Start" Clicked="Button_Clicked_1"/>
             <Label Text="Добавление товара"
@@ -30,11 +32,23 @@
 
             <Button Text="Добавить" Clicked="Button_Clicked"/>
 
+            <Label Text="Добавление характеристик"
+                HorizontalOptions="Center" FontSize="Large" />
+            <Label Text="Товар" />
+            <Picker x:Name="picker_prod1" />
+            <Label Text="Название характеристики" />
+            <Entry x:Name="name_attr" />
+            <Label Text="Значение" />
+            <Entry x:Name="value_attr" />
+            <Button Text="Добавить" Clicked="Button_Clicked_3"/>
+
             <Label Text="Удаление товара"
                 HorizontalOptions="Center" FontSize="Large" />
             <Label Text="Товар" />
             <Picker x:Name="picker_prod" />
             <Button Text="Удалить" Clicked="Button_Clicked_2"/>
+      
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

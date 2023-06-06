@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -93,5 +93,21 @@
       <Name>pc_store</Name>
     </ProjectReference>
   </ItemGroup>
- <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\cart.png" />
+    <AndroidResource Include="Resources\drawable\checklist.png" />
+    <AndroidResource Include="Resources\drawable\configurator1.png" />
+    <AndroidResource Include="Resources\drawable\configurator11.png" />
+    <AndroidResource Include="Resources\drawable\configurator12.png" />
+    <AndroidResource Include="Resources\drawable\configurator2.png" />
+    <AndroidResource Include="Resources\drawable\configurator3.png" />
+    <AndroidResource Include="Resources\drawable\configurator4.png" />
+    <AndroidResource Include="Resources\drawable\configurator5.png" />
+    <AndroidResource Include="Resources\drawable\configurator6.png" />
+    <AndroidResource Include="Resources\drawable\configurator7.png" />
+    <AndroidResource Include="Resources\drawable\configurator8.png" />
+    <AndroidResource Include="Resources\drawable\document.png" />
+    <AndroidResource Include="Resources\drawable\home.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

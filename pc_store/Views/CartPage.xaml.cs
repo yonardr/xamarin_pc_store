@@ -28,14 +28,15 @@ namespace pc_store.Views
             {
                 if (item != null)
                 {
-                    var prod_name = App.Database.GetProduct(item.prod_id).name;
+                    var prod_name = App.Database.GetProduct(item.prod_id);
                     var l = new ViewCart()
                     {
                         Id = item.Id,
                         prod_id = item.prod_id,
-                        name = prod_name,
+                        name = prod_name.name,
                         price = item.price,
                         quantity = item.quantity,
+                        img = prod_name.img
                     };
                     list.Add(l);
                 }
@@ -88,6 +89,7 @@ namespace pc_store.Views
         class ViewCart : Cart
         {
             public string name { get; set; }
+            public string img { get; set; }
 
         }
 
@@ -100,6 +102,12 @@ namespace pc_store.Views
             {
                 if(item != null) arr_id_carts.Add(item.Id);
                 if (item != null) price += item.price * item.quantity;
+                if(item != null)
+                {
+                    var prod = App.Database.GetProduct(item.prod_id);
+                    prod.quantity -= item.quantity;
+                    App.Database.SaveProduct(prod);
+                }
             }
             var res = App.Database.CreateOrder(arr_id_carts, Jwt.id, price);
             await DisplayAlert($"Заказ #{res} создан", "", "ок") ;

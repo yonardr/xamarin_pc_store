@@ -13,7 +13,7 @@ namespace pc_store.Services
         {
             database = new SQLiteConnection(databasePath);
             database.CreateTables<Users, Products, Types, Cart, UserCart>();
-            database.CreateTables<Orders, CartsOrder>();
+            database.CreateTables<Orders, CartsOrder, Attributes, AttributeProduct>();
         }
         
     }

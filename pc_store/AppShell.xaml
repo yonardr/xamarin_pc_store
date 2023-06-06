@@ -14,12 +14,12 @@
     <Shell.Resources>
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
-                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.BackgroundColor" Value="#151528" />
                 <Setter Property="Shell.ForegroundColor" Value="White" />
                 <Setter Property="Shell.TitleColor" Value="White" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                 <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
-                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#151528" />
                 <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
                 <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
                 <Setter Property="Shell.TabBarTitleColor" Value="White"/>
@@ -31,10 +31,10 @@
 
     <TabBar>
         <!--<ShellContent Title="Главная" Icon="icon_about.png" Route="MainPage" ContentTemplate="{DataTemplate local:MainPage}"/>-->
-        <ShellContent Title="Главная" ContentTemplate="{DataTemplate local:MainPage}"/>
-        <ShellContent Title="Конфигуратор" ContentTemplate="{DataTemplate local:ConfPage}"/>
-        <ShellContent Title="Корзина" ContentTemplate="{DataTemplate local:CartPage}"/>
-        <ShellContent Title="Заказы" ContentTemplate="{DataTemplate local:OrdersPage}"/>
+        <ShellContent Title="Главная" Icon="home.png" ContentTemplate="{DataTemplate local:MainPage}"/>
+        <ShellContent Title="Конфигуратор" Icon="configurator1.png" ContentTemplate="{DataTemplate local:ConfPage}"/>
+        <ShellContent Title="Корзина" Icon="cart.png" ContentTemplate="{DataTemplate local:CartPage}"/>
+        <ShellContent Title="Заказы" Icon="document.png" ContentTemplate="{DataTemplate local:OrdersPage}"/>
     </TabBar>
 
     <!--

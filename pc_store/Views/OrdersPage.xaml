@@ -1,31 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="pc_store.Views.OrdersPage">
+             x:Class="pc_store.Views.OrdersPage" BackgroundColor="WhiteSmoke">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
             <ListView x:Name="ordersList" ItemsSource="{Binding}" ItemSelected="OnItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="Номер заказа: " FontSize="Medium" TextColor="PaleVioletRed" />
-                                    <Label Text="{Binding Id}" FontSize="Medium" TextColor="PaleVioletRed"/>
-                                    
-                                    <Label Text="Статус заказа: " FontSize="Medium" TextColor="PaleVioletRed" />
-                                    <Label Text="{Binding status}" FontSize="Medium" TextColor="PaleVioletRed"/>
-                                    
-                                    <Label Text="Дата создания: " FontSize="Medium" TextColor="PaleVioletRed"/>
-                                    <Label Text="{Binding date}" FontSize="Medium" TextColor="PaleVioletRed"/>
-                                    
-                                    <Label Text="Цена: " FontSize="Medium" TextColor="PaleVioletRed" Margin="150,0,0,0"/>
-                                    <Label Text="{Binding price}" FontSize="Medium" TextColor="PaleVioletRed"/>
+                                <StackLayout Orientation="Horizontal" Margin="10">
+                                    <StackLayout Margin="50,0,0,0">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="checklist.png" Margin="0,15,50,0" WidthRequest="20"/>
+                                            <Label Text="№ " FontSize="Medium" TextColor="#151528" />
+                                        <Label Text="{Binding Id}" FontSize="Medium" TextColor="#151528"/>
+                                        </StackLayout>
+                                        <Label Text="{Binding status}" FontSize="Micro" TextColor="#151528" Margin="75,0,0,0"/>
+                                    </StackLayout>
 
-                                    
+                                    <StackLayout Margin="150,0,0,0">
+                                    <Label Text="{Binding date}" FontSize="Micro" TextColor="Silver"/>
+                                        <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding price}" FontSize="Medium" TextColor="#151528"/>
+                                            <Label Text=" ₽" FontSize="Medium" TextColor="#151528"/>
+                                        </StackLayout>
+                                    </StackLayout>
 
 
                                 </StackLayout>

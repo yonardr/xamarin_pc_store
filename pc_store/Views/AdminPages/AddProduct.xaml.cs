@@ -24,6 +24,7 @@ namespace pc_store.Views.AdminPages
             foreach (var p in App.Database.GetProducts())
             {
                 picker_prod.Items.Add($"{p.name}");
+                picker_prod1.Items.Add($"{p.name}");
             }
         }
 
@@ -70,6 +71,23 @@ namespace pc_store.Views.AdminPages
                 DisplayAlert("Ошибка", $"{ex}", "Ok");
             }
 
+        }
+
+        private void Button_Clicked_3(object sender, EventArgs e)
+        {
+            if (picker_prod1.SelectedIndex > 0)
+            {
+                var prod_name = picker_prod1.Items[picker_prod1.SelectedIndex];
+                var prod_id = App.Database.GetProducts().Where(i => i.name == prod_name).FirstOrDefault();
+                Attributes a = new Attributes()
+                {
+                    name = name_attr.Text,
+                    value = value_attr.Text
+                };
+                App.Database.SaveAttrinbute(a, prod_id.Id);
+                DisplayAlert("Успешно", "", "Ok");
+            }
+            
         }
     }
 }

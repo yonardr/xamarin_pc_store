@@ -38,7 +38,7 @@ namespace pc_store.Views
                     res += "Общая цена: " + cart.price* cart.quantity + "\n\n";
                 }
             }
-            await DisplayAlert("Информация о заказе", $"{res} \nИтоговая цена: ${selected.price}", "ok");
+            await DisplayAlert("Информация о заказе", $"{res} \nИтоговая цена: {selected.price}", "ok");
 
         }
     }

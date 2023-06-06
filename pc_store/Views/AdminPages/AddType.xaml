@@ -18,7 +18,7 @@
             <Label Text="Название типа" />
             <Entry x:Name="type_name"/>
 
-            <Button Text="Добавить" Clicked="Button_Clicked_1"/>
+            <Button Text="Удалить" Clicked="Button_Clicked_1"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

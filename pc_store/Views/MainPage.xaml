@@ -8,27 +8,30 @@
                 <Picker.Items>
                 </Picker.Items>
             </Picker>
-            
             <ListView x:Name="productsList" ItemsSource="{Binding}" ItemSelected="OnItemSelected">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <StackLayout Orientation="Horizontal">
-                                    <Image Source="{Binding img}" WidthRequest="250"/>
-                                    <Label Text="{Binding name}" FontSize="Medium" TextColor="White"/>
-
-                                    <Label Text="Цена: " FontSize="Medium" TextColor="White" Margin="250,0,0,0"/>
-                                    <Label Text="{Binding price}" FontSize="Medium" TextColor="White"/>
-                                   
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                <StackLayout Orientation="Horizontal" Margin="10">
+                                        <Image Source="{Binding img}" WidthRequest="250"/>
+                                        <Label Text="{Binding name}" FontSize="Large" TextColor="White" Margin="20,0,0,0"/>
+                                    <StackLayout >
+                                        <StackLayout Orientation="Horizontal">
+                                        <Label Text="Цена: " FontSize="Medium" TextColor="White" Margin="250,0,0,0"/>
+                                        <Label Text="{Binding price}" FontSize="Medium" TextColor="White"/>
+                                        <Label Text=" ₽" FontSize="Medium" TextColor="White"/>
+                                        </StackLayout>
+                                        <Button Text="Купить" Margin="50"/>
+                                    </StackLayout>
                                 </StackLayout>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <Button Text="Добавить" Clicked="CreateFriend" BackgroundColor="#2196f3" TextTransform="None" Margin="30,0,30,20"/>
-            <Button Text="Выйти" Clicked="Button_Clicked" BackgroundColor="#2196f3" TextTransform="None" Margin="30,0,30,20"/>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            <Button Text="Выйти" Clicked="Button_Clicked" BackgroundColor="#151528" TextTransform="None" Margin="250,0,250,0"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

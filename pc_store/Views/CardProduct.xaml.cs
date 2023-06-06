@@ -21,6 +21,8 @@ namespace pc_store.Views
         }
         protected override void OnAppearing()
         {
+            attrList.ItemsSource = App.Database.GetAttrs(Convert.ToInt32(id.Text));
+            
 
             if (quantity.Text == "0")
             {
@@ -29,6 +31,8 @@ namespace pc_store.Views
                 btn_cart.BackgroundColor = Color.Silver;
             }
             base.OnAppearing();
+
+
         }
 
         private async void Button_Clicked(object sender, EventArgs e)

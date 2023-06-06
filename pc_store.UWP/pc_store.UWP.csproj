@@ -104,7 +104,20 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="configurator-2.svg" />
+    <Content Include="cart.png" />
+    <Content Include="checklist.png" />
+    <Content Include="configurator1.png" />
+    <Content Include="configurator11.png" />
+    <Content Include="configurator12.png" />
+    <Content Include="configurator2.png" />
+    <Content Include="configurator3.png" />
+    <Content Include="configurator4.png" />
+    <Content Include="configurator5.png" />
+    <Content Include="configurator6.png" />
+    <Content Include="configurator7.png" />
+    <Content Include="configurator8.png" />
+    <Content Include="document.png" />
+    <Content Include="home.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />

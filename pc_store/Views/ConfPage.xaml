@@ -1,14 +1,77 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="pc_store.Views.ConfPage" BackgroundImageSource="https://probaggage.ru/wp-content/uploads/2021/06/1614564388_90-p-fon-dlya-fotoshopa-odnotonnii-belii-100-scaled.jpg">
+             x:Class="pc_store.Views.ConfPage" BackgroundColor="WhiteSmoke">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Image Source="https://www.ironbook.ru/local/templates/New/images/configurator-1.svg" WidthRequest="350"/>
-            <Image Source="configurator-2.svg" WidthRequest="300" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout HorizontalOptions="Start">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                </Grid>
+                <Label Text="Конфигуратор системного блока" Margin="20"  FontSize="Header" TextColor="#151528"/>
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,50" Grid.Row="0">
+                    <Image Source="configurator1.png" Margin="50,0,10,35" />
+                    <StackLayout>
+                        <Label Text="Процессор" FontSize="Medium" TextColor="#151528"/>
+                        <Label Margin="5" TextColor="#151528" Text="Процессор (CPU) – сердце компьютера. Чем выше частота тем быстрее обрабатываются данные, а количество ядер позволяет распределить нагрузку и повысить быстродействие всей системы. Для разгона существуют модели с разблокированным множителем. Больший кеш улучшает работу в тяжелых режимах." FontSize="Micro"/>
+                        <Picker x:Name="picker_process" BackgroundColor="Silver" HeightRequest="30" WidthRequest="30" Margin="5,0,250,0" />
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,50" Grid.Row="1">
+                    <Image Source="configurator2.png" Margin="50,0,10,35" />
+                    <StackLayout>
+                        <Label Text="Охлаждение" FontSize="Medium" TextColor="#151528"/>
+                        <Label Margin="5" TextColor="#151528" Text="Охлаждения (cooler) – радиатор с прикреплённым вентилятором предназначенный для охлаждения процессора. Показатель теплоотвода (TDP) кулера не должен быть меньше показателя тепловыделения (TDP) процессора. А если процессор выбираете для разгона, то теплоотвод системы охлаждения должен превышать показатель минимум в два раза." FontSize="Micro"/>
+                        <Picker x:Name="picker_cool" BackgroundColor="Silver" HeightRequest="30" WidthRequest="30" Margin="5,0,250,0" />
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,50">
+                    <Image Source="configurator3.png" Margin="50,0,10,35" />
+                    <StackLayout>
+                        <Label Text="Материнская плата" FontSize="Medium" TextColor="#151528"/>
+                        <Label Margin="5" TextColor="#151528" Text="Материнская плата (MB) – основа компьютера. На плату как конструктор собираются остальные комплектующие. Материнская плата не отвечает за быстродействие компьютера, но за функционал, от нее зависит количество нужных выходов и разъемов, поддержка режимов SLI, Cross-Fire, Raid, и конечно разводка системы питания." FontSize="Micro"/>
+                        <Picker x:Name="picker_mat" BackgroundColor="Silver" HeightRequest="30" WidthRequest="30" Margin="5,0,250,0" />
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,50">
+                    <Image Source="configurator4.png" Margin="50,0,10,35" />
+                    <StackLayout>
+                        <Label Text="Оперативная память" FontSize="Medium" TextColor="#151528"/>
+                        <Label Margin="5" TextColor="#151528" Text="Оперативная память (Mem) – отвечает за то, с каким объемом данных в данный момент времени может работать процессор. Чем ее больше, тем быстрее работает компьютер." FontSize="Micro"/>
+                        <Picker x:Name="picker_ozu" BackgroundColor="Silver" HeightRequest="30" WidthRequest="30" Margin="5,0,250,0" />
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,50">
+                    <Image Source="configurator5.png" Margin="50,0,10,35" />
+                    <StackLayout>
+                        <Label Text="SSD" FontSize="Medium" TextColor="#151528"/>
+                        <Label Margin="5" TextColor="#151528" Text="Твердотельный накопитель (SSD) – это скоростное устройство для хранения данных. Его скорость работы в несколько раз быстрее обычного жесткого диска. Обычно SSD используют для установки на него Операционной системы и всех сопутствующих программ. Существенно ускоряет работу всего компьютера." FontSize="Micro"/>
+                        <Picker x:Name="picker_ssd" BackgroundColor="Silver" HeightRequest="30" WidthRequest="30" Margin="5,0,250,0" />
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,20">
+                    <Image Source="configurator8.png" Margin="50,0,10,35" />
+                    <StackLayout>
+                        <Label Text="Видеокарта" FontSize="Medium" TextColor="#151528"/>
+                        <Label Margin="5" TextColor="#151528" Text="Видеокарта (GPU) – это устройство отвечающее за поддержку и быстродействие игрового процесса. Основой видеокарты есть графический чип, чем выше мощность тем лучше. Второстепенный показатель – это видеопамять, отвечающая за подгрузку текстур на дисплей." FontSize="Micro"/>
+                        <Picker x:Name="picker_video" BackgroundColor="Silver" HeightRequest="30" WidthRequest="30" Margin="5,0,250,0" />
+                    </StackLayout>
+                </StackLayout>
+
+                <Label Text="Итоговая стоймость: " FontSize="Medium" TextColor="#151528" Margin="45,0,0,0"/>
+                <Button Text="Купить" Margin="45,0,500,0" BackgroundColor="#151528"/>
+            </StackLayout>
+            
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
