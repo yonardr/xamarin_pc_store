@@ -13,6 +13,8 @@ namespace pc_store.Models
         
         public string status { get; set; }
         public string date { get; set; } 
-        public double price { get; set; }   
+        public double price { get; set; }  
+        
+        public int user_id { get; set; }
     }
 }

@@ -34,7 +34,7 @@
         <ShellContent Title="Главная" ContentTemplate="{DataTemplate local:MainPage}"/>
         <ShellContent Title="Конфигуратор" ContentTemplate="{DataTemplate local:CartPage}"/>
         <ShellContent Title="Корзина" ContentTemplate="{DataTemplate local:CartPage}"/>
-        <ShellContent Title="Заказы" ContentTemplate="{DataTemplate local:CartPage}"/>
+        <ShellContent Title="Заказы" ContentTemplate="{DataTemplate local:OrdersPage}"/>
     </TabBar>
 
     <!--

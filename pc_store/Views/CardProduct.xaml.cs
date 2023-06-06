@@ -17,14 +17,20 @@ namespace pc_store.Views
 		public CardProduct ()
 		{
 			InitializeComponent ();
-            if(quantity.Text == "0")
+            
+        }
+        protected override void OnAppearing()
+        {
+
+            if (quantity.Text == "0")
             {
                 btn = "none";
                 btn_cart.Text = "Товара нет в наличии";
+                btn_cart.BackgroundColor = Color.Silver;
             }
-            
+            base.OnAppearing();
         }
-		
+
         private async void Button_Clicked(object sender, EventArgs e)
         {
             Application.Current.MainPage = new AppShell();
@@ -49,5 +55,8 @@ namespace pc_store.Views
 
 
         }
+     
+            
+        
     }
 }
